@@ -8,7 +8,7 @@ export default function Home() {
               <div className="h-56 grid gap-4 content-center">
                   <div>Isaac La</div>
                   <div>Sr. Software Engineer</div>
-                  <div>Something cool is coming up soon....</div>
+                  <div>Coming soon....</div>
               </div>
           </div>
       </main>
