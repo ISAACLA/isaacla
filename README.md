@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Isaac La
 
-## Getting Started
+Personal site for Isaac La, a senior software engineer in Irvine, California. One page: a short intro, a work timeline, and the stack from the resume.
 
-First, run the development server:
+## Requirements
+
+Node.js 22 or newer. The version is pinned in `.nvmrc`.
+
+## Scripts
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The dev server runs at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command                | What it does                           |
+| ---------------------- | -------------------------------------- |
+| `npm run dev`          | Start the Next.js dev server           |
+| `npm run build`        | Production build                       |
+| `npm run start`        | Serve the production build             |
+| `npm run lint`         | ESLint                                 |
+| `npm run format`       | Format with Prettier                   |
+| `npm run format:check` | Check formatting without writing files |
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Where things live
 
-## Learn More
+- `app/page.tsx` renders the page.
+- `lib/profile.ts` holds the intro, roles, skills, and contact details.
+- `components/matrix-rain.tsx` is the background.
+- `components/typed-intro.tsx` types the intro.
 
-To learn more about Next.js, take a look at the following resources:
+Indentation is 2 spaces, set in `.editorconfig`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Checks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+On every push and pull request, GitHub Actions installs dependencies, lints, checks formatting, and builds. The workflow is `.github/workflows/ci.yml`.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+An earlier version of the site is on the `THEME_A` branch.
