@@ -1,3 +1,4 @@
+import { CopyEmail } from "@/components/copy-email";
 import { MatrixRain } from "@/components/matrix-rain";
 import { TypedIntro } from "@/components/typed-intro";
 import { education, profile, roles, skillGroups } from "@/lib/profile";
@@ -29,22 +30,37 @@ export default function Home() {
           >
             isaac@la
           </a>
-          <nav className="flex gap-4" aria-label="Contact">
+          <nav
+            className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1"
+            aria-label="Contact and resume"
+          >
+            <CopyEmail
+              email={profile.email}
+              className={`inline-flex min-h-6 items-center text-muted underline decoration-phosphor/40 underline-offset-4 hover:text-phosphor ${focusRing}`}
+            />
             <a
-              className={`inline-flex min-h-6 items-center text-muted no-underline hover:text-phosphor ${focusRing}`}
-              href={`mailto:${profile.email}`}
-              aria-label={`Email ${profile.email}`}
+              className={`inline-flex min-h-6 items-center whitespace-nowrap text-muted underline decoration-phosphor/40 underline-offset-4 hover:text-phosphor ${focusRing}`}
+              href={profile.phoneHref}
+              aria-label={`Call ${profile.phone}`}
             >
-              Email
+              {profile.phone}
             </a>
             <a
-              className={`inline-flex min-h-6 items-center text-muted no-underline hover:text-phosphor ${focusRing}`}
+              className={`inline-flex min-h-6 items-center text-muted underline decoration-phosphor/40 underline-offset-4 hover:text-phosphor ${focusRing}`}
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Isaac La on LinkedIn, opens in a new tab"
             >
               LinkedIn
+            </a>
+            <a
+              className={`inline-flex min-h-6 items-center text-muted underline decoration-phosphor/40 underline-offset-4 hover:text-phosphor ${focusRing}`}
+              href="/Isaac_La.pdf"
+              download="Isaac_La.pdf"
+              aria-label="Download resume"
+            >
+              Resume
             </a>
           </nav>
         </div>
@@ -128,7 +144,7 @@ export default function Home() {
                       }`}
                     />
                   </div>
-                  <div className="pb-[0.85rem] max-sm:col-start-2 max-sm:row-start-2">
+                  <div className="pb-10 group-last:pb-0 max-sm:col-start-2 max-sm:row-start-2">
                     <h3 className="m-0 text-[1.05rem] font-medium tracking-tight">
                       {role.company}
                     </h3>
@@ -142,61 +158,77 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="scroll-mt-16 pt-5 pb-8" id="stack" aria-labelledby="stack-heading">
+        <section className="scroll-mt-16 pt-5 pb-6" id="skills" aria-labelledby="skills-heading">
           <div className={shell}>
-            <h2 id="stack-heading" className={label}>
-              Stack
+            <h2 id="skills-heading" className={label}>
+              Skills
             </h2>
-            <dl className="mx-auto w-[min(40rem,100%)] border-t border-phosphor/15">
+            <dl className="border-t border-phosphor/15">
               {skillGroups.map((group) => (
                 <div
-                  className="grid grid-cols-[7.5rem_1fr] gap-4 border-b border-phosphor/15 py-2 max-sm:grid-cols-1 max-sm:gap-1"
+                  className="grid grid-cols-[12rem_minmax(0,1fr)] items-baseline gap-x-6 border-b border-phosphor/15 py-2.5 max-sm:grid-cols-1 max-sm:gap-y-1"
                   key={group.label}
                 >
-                  <dt className="text-[0.75rem] tracking-[0.14em] text-phosphor uppercase">
+                  <dt className="text-right text-[0.72rem] tracking-[0.08em] text-phosphor max-sm:text-left">
                     {group.label}
                   </dt>
-                  <dd className="m-0 leading-normal text-muted">
+                  <dd className="m-0 text-[0.84rem] leading-relaxed text-muted">
                     <span className="sr-only">{group.items.join(", ")}</span>
-                    <span aria-hidden="true">{group.items.join(" · ")}</span>
+                    <span aria-hidden="true" className="flex flex-wrap gap-y-1">
+                      {group.items.map((item) => (
+                        <span
+                          className="whitespace-nowrap after:px-2 after:text-phosphor/40 after:content-['·'] last:after:content-none"
+                          key={item}
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </span>
                   </dd>
                 </div>
               ))}
             </dl>
           </div>
         </section>
+
+        <section
+          className="scroll-mt-16 pt-5 pb-8"
+          id="education"
+          aria-labelledby="education-heading"
+        >
+          <div className={shell}>
+            <h2 id="education-heading" className={label}>
+              Education
+            </h2>
+            <p className="m-0 text-center text-[1.05rem] font-medium tracking-tight">
+              {education.school}
+            </p>
+            <p className="m-0 mt-1 text-center text-[0.82rem] text-muted">
+              <span className="sr-only">{`${education.degree}, ${education.years}`}</span>
+              <span aria-hidden="true">
+                {education.degree} · {education.years}
+              </span>
+            </p>
+          </div>
+        </section>
       </main>
 
       <footer
         className="relative z-[1] border-t border-phosphor/15 bg-transparent pb-6 max-[999px]:bg-bg/75"
-        aria-label="Education and contact"
+        aria-label="Site"
       >
         <div
-          className={`${shell} flex flex-wrap items-center justify-between gap-x-6 gap-y-2 py-4 text-[0.82rem] text-muted max-sm:flex-col max-sm:items-start`}
+          className={`${shell} flex flex-wrap items-center justify-between gap-x-6 gap-y-2 py-4 text-[0.82rem] text-muted max-sm:flex-col max-sm:items-center max-sm:text-center`}
         >
           <p className="m-0">
-            <span className="sr-only">{`${education.school}, ${education.degree}, ${education.years}`}</span>
+            <span className="sr-only">{`${profile.name}, ${profile.location}`}</span>
             <span aria-hidden="true">
-              {education.school} · {education.degree} · {education.years}
+              {profile.name} · {profile.location}
             </span>
           </p>
-          <p className="m-0">
-            <a
-              className={`text-muted underline decoration-phosphor/40 underline-offset-4 hover:text-phosphor ${focusRing}`}
-              href={`mailto:${profile.email}`}
-              aria-label={`Email ${profile.email}`}
-            >
-              {profile.email}
-            </a>
-            <span aria-hidden="true"> · </span>
-            <a
-              className={`whitespace-nowrap text-muted underline decoration-phosphor/40 underline-offset-4 hover:text-phosphor ${focusRing}`}
-              href={profile.phoneHref}
-              aria-label={`Call ${profile.phone}`}
-            >
-              {profile.phone}
-            </a>
-          </p>
+          <a className={`text-muted no-underline hover:text-phosphor ${focusRing}`} href="#top">
+            Back to top
+          </a>
         </div>
       </footer>
     </>

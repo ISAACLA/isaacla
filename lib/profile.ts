@@ -128,10 +128,6 @@ export const roles: Role[] = [
 
 export const skillGroups = [
   {
-    label: "Languages",
-    items: ["JavaScript", "TypeScript", "Java", "Python"],
-  },
-  {
     label: "Frontend",
     items: [
       "React",
@@ -154,16 +150,20 @@ export const skillGroups = [
     items: ["PostgreSQL", "MySQL", "DynamoDB", "MongoDB"],
   },
   {
-    label: "Cloud",
+    label: "Cloud & DevOps",
     items: ["AWS", "Docker", "CI/CD"],
   },
   {
-    label: "Messaging",
+    label: "Messaging & Caching",
     items: ["RabbitMQ", "AWS SQS", "AWS SNS", "Redis"],
   },
   {
-    label: "APIs",
+    label: "APIs & ORM",
     items: ["GraphQL", "Prisma", "TypeORM", "Sequelize"],
+  },
+  {
+    label: "Languages",
+    items: ["JavaScript", "TypeScript", "Java", "Python"],
   },
 ];
 
