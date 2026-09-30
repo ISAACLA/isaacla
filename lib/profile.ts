@@ -7,6 +7,7 @@ export type Role = {
   end: string;
   place: string;
   summary: string;
+  brief: string;
   highlights: string[];
 };
 
@@ -21,6 +22,8 @@ export const profile = {
   headline: "From the schema to the screen.",
   intro:
     "Senior software engineer, full stack. I design the system and the database behind it, build and maintain the servers that run the core business logic, and take it through to reusable interface components people actually enjoy using.",
+  summary:
+    "I am an experienced software engineer. I build complex systems for companies from large enterprises to startups, on both the frontend and the backend. I design the system from scratch, build and maintain the services that hold the business logic, and ship the interface in front of them. I like sharing what I know, helping the team grow, and staying humble enough to keep learning.",
 };
 
 export const roles: Role[] = [
@@ -32,6 +35,7 @@ export const roles: Role[] = [
     start: "Jun 2025",
     end: "Present",
     place: "Remote",
+    brief: "News systems in Java, Node, and React.",
     summary:
       "Designing the path news data takes: the system, the Java services that process it, and the React surface as older systems move forward.",
     highlights: [
@@ -49,6 +53,7 @@ export const roles: Role[] = [
     start: "Jul 2024",
     end: "Jun 2025",
     place: "Remote",
+    brief: "Enterprise services and Next.js interfaces.",
     summary:
       "Both ends of a large enterprise build. Services that hold the business logic, then React and Next.js components shaped with design.",
     highlights: [
@@ -66,6 +71,7 @@ export const roles: Role[] = [
     start: "Feb 2022",
     end: "May 2024",
     place: "Remote",
+    brief: "API gateway, pre-order service, and product UI.",
     summary:
       "Designed the services an EV company ran on, then the reusable interface in front of them.",
     highlights: [
@@ -82,6 +88,7 @@ export const roles: Role[] = [
     start: "Nov 2021",
     end: "Feb 2022",
     place: "Irvine, California",
+    brief: "Spring Boot and Angular for property data.",
     summary:
       "The server and the screen for a company that sells property data. Spring Boot for the logic, Angular for the people using it.",
     highlights: [
@@ -96,6 +103,7 @@ export const roles: Role[] = [
     start: "Mar 2019",
     end: "Nov 2021",
     place: "Irvine, California",
+    brief: "Client platforms in Angular and Next.js.",
     summary:
       "Consulting work that ran the full distance: data and services for the business, then the interface on top.",
     highlights: [
@@ -111,6 +119,7 @@ export const roles: Role[] = [
     start: "Nov 2017",
     end: "Mar 2019",
     place: "San Clemente, California",
+    brief: "Applications from the server to the interface.",
     summary:
       "Where the full-stack habit started. Applications from the server through to the interface, on whatever stack the client needed.",
     highlights: [
@@ -122,23 +131,41 @@ export const roles: Role[] = [
 export const skillGroups = [
   {
     label: "Languages",
-    items: ["TypeScript", "JavaScript", "Java", "Python"],
+    items: ["JavaScript", "TypeScript", "Java", "Python"],
   },
   {
     label: "Frontend",
-    items: ["React", "Next.js", "Angular", "Tailwind", "Redux", "React Query"],
+    items: [
+      "React",
+      "Next.js",
+      "Angular",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Redux",
+      "React Query",
+      "Context API",
+      "NGXS",
+    ],
   },
   {
     label: "Backend",
-    items: ["Node.js", "Nest.js", "Express", "Spring Boot", "Django"],
+    items: ["Node.js", "Nest.js", "Express.js", "Spring Boot", "Django"],
   },
   {
-    label: "Data",
-    items: ["PostgreSQL", "MySQL", "DynamoDB", "MongoDB", "Prisma", "TypeORM"],
+    label: "Database",
+    items: ["PostgreSQL", "MySQL", "DynamoDB", "MongoDB"],
   },
   {
-    label: "Platform",
-    items: ["AWS", "SQS", "SNS", "RabbitMQ", "Redis", "Docker", "GraphQL"],
+    label: "Cloud",
+    items: ["AWS", "Docker", "CI/CD"],
+  },
+  {
+    label: "Messaging",
+    items: ["RabbitMQ", "AWS SQS", "AWS SNS", "Redis"],
+  },
+  {
+    label: "APIs",
+    items: ["GraphQL", "Prisma", "TypeORM", "Sequelize"],
   },
 ];
 
