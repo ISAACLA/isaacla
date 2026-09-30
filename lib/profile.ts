@@ -122,9 +122,7 @@ export const roles: Role[] = [
     brief: "Applications from the server to the interface.",
     summary:
       "Where the full-stack habit started. Applications from the server through to the interface, on whatever stack the client needed.",
-    highlights: [
-      "Shipped applications in Angular, Sails.js, Laravel, and Ionic.",
-    ],
+    highlights: ["Shipped applications in Angular, Sails.js, Laravel, and Ionic."],
   },
 ];
 
@@ -200,8 +198,7 @@ export const notes = [
     role: "Engineering manager, Fisker",
   },
   {
-    quote:
-      "He is humble, intelligent, and will always make you laugh. 10/10 engineer.",
+    quote: "He is humble, intelligent, and will always make you laugh. 10/10 engineer.",
     name: "Miguel Duarte",
     role: "Teammate, Fisker",
   },

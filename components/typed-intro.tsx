@@ -6,17 +6,19 @@ export function TypedIntro({ text }: { text: string }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      setCount(text.length);
-      return;
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (media.matches) {
+      const reveal = window.setTimeout(() => setCount(text.length), 0);
+      return () => window.clearTimeout(reveal);
     }
 
     let index = 0;
     const timer = window.setInterval(() => {
       index += 1;
       setCount(index);
-      if (index >= text.length) window.clearInterval(timer);
+      if (index >= text.length) {
+        window.clearInterval(timer);
+      }
     }, 18);
 
     return () => window.clearInterval(timer);

@@ -26,9 +26,7 @@ export function Experience() {
               <span className="role-index">{role.index}</span>
               <span className="role-company">{role.company}</span>
               <span className="role-when">
-                {role.end === "Present"
-                  ? "Now"
-                  : `${role.start.slice(-2)}–${role.end.slice(-2)}`}
+                {role.end === "Present" ? "Now" : `${role.start.slice(-2)}–${role.end.slice(-2)}`}
               </span>
             </button>
           );

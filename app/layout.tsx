@@ -20,7 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${mono.variable} scroll-smooth motion-reduce:scroll-auto`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${mono.variable} scroll-smooth motion-reduce:scroll-auto`}
+      suppressHydrationWarning
+    >
       <body
         className="min-h-screen bg-bg font-mono text-ink selection:bg-phosphor selection:text-[#041208] [background-image:radial-gradient(900px_420px_at_50%_-10%,rgb(61_255_122/0.08),transparent_60%)]"
         suppressHydrationWarning

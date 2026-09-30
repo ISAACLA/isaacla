@@ -62,7 +62,10 @@ export default function Home() {
             </p>
             <h1 className="m-0 mt-2 text-[clamp(2.15rem,4.2vw,3.15rem)] leading-none font-medium tracking-tight">
               <span id="profile-name">Isaac La</span>
-              <span className="animate-blink text-phosphor motion-reduce:animate-none" aria-hidden="true">
+              <span
+                className="animate-blink text-phosphor motion-reduce:animate-none"
+                aria-hidden="true"
+              >
                 _
               </span>
             </h1>
@@ -88,7 +91,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="scroll-mt-16 pt-5 pb-6" id="experience" aria-labelledby="experience-heading">
+        <section
+          className="scroll-mt-16 pt-5 pb-6"
+          id="experience"
+          aria-labelledby="experience-heading"
+        >
           <div className={shell}>
             <h2 id="experience-heading" className={label}>
               Experience
@@ -113,15 +120,17 @@ export default function Home() {
                     <span className="absolute top-[0.45rem] bottom-0 left-1/2 w-px -translate-x-1/2 bg-line group-last:bottom-auto group-last:h-[0.45rem]" />
                     <span
                       className={`absolute top-[0.28rem] left-1/2 size-[0.48rem] -translate-x-1/2 rounded-full border border-phosphor ${
-                        index === 0
-                          ? "bg-phosphor shadow-[0_0_12px_#3dff7a]"
-                          : "bg-bg"
+                        index === 0 ? "bg-phosphor shadow-[0_0_12px_#3dff7a]" : "bg-bg"
                       }`}
                     />
                   </div>
                   <div className="pb-[0.85rem] max-sm:col-start-2 max-sm:row-start-2">
-                    <h3 className="m-0 text-[1.05rem] font-medium tracking-tight">{role.company}</h3>
-                    <p className="m-0 mt-0.5 text-[0.82rem] leading-snug text-muted">{role.title}</p>
+                    <h3 className="m-0 text-[1.05rem] font-medium tracking-tight">
+                      {role.company}
+                    </h3>
+                    <p className="m-0 mt-0.5 text-[0.82rem] leading-snug text-muted">
+                      {role.title}
+                    </p>
                   </div>
                 </li>
               ))}
@@ -154,7 +163,10 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="relative z-[1] border-t border-phosphor/15 pb-6" aria-label="Education and contact">
+      <footer
+        className="relative z-[1] border-t border-phosphor/15 pb-6"
+        aria-label="Education and contact"
+      >
         <div
           className={`${shell} flex flex-wrap items-center justify-between gap-x-6 gap-y-2 py-4 text-[0.82rem] text-muted max-sm:flex-col max-sm:items-start`}
         >
