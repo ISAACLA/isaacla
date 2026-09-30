@@ -18,7 +18,7 @@ export default function Home() {
       >
         Skip to content
       </a>
-      <header className="sticky top-0 z-10 border-b border-phosphor/15 bg-bg/80 backdrop-blur-md">
+      <header className="sticky top-0 z-10 border-b border-phosphor/15 bg-bg/80 backdrop-blur-md max-[999px]:bg-bg/90">
         <div
           className={`${shell} flex min-h-11 flex-wrap items-center justify-between gap-x-6 gap-y-2 text-[0.82rem]`}
         >
@@ -50,7 +50,11 @@ export default function Home() {
         </div>
       </header>
 
-      <main id="top" tabIndex={-1} className="relative z-[1] scroll-mt-16 outline-none">
+      <main
+        id="top"
+        tabIndex={-1}
+        className="relative z-[1] scroll-mt-16 bg-transparent outline-none max-[999px]:bg-bg/60 max-[999px]:[text-shadow:0_1px_8px_#050806]"
+      >
         <section className="pt-10 pb-4" aria-labelledby="profile-name">
           <div className={`${shell} flex flex-col items-center text-center`}>
             <p className="m-0 flex items-center gap-2 text-[0.7rem] tracking-[0.16em] text-phosphor uppercase">
@@ -164,7 +168,7 @@ export default function Home() {
       </main>
 
       <footer
-        className="relative z-[1] border-t border-phosphor/15 pb-6"
+        className="relative z-[1] border-t border-phosphor/15 bg-transparent pb-6 max-[999px]:bg-bg/75"
         aria-label="Education and contact"
       >
         <div

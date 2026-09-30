@@ -42,7 +42,7 @@ const drops = Array.from({ length: 340 }, (_, index) => {
 export function MatrixRain() {
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden motion-reduce:hidden [mask-image:linear-gradient(90deg,#000_0,#000_calc(50%-500px),transparent_calc(50%-440px),transparent_calc(50%+440px),#000_calc(50%+500px),#000_100%)]"
+      className="pointer-events-none fixed inset-0 z-0 overflow-hidden motion-reduce:hidden [mask-image:linear-gradient(90deg,#000_0,#000_calc(50%-500px),transparent_calc(50%-440px),transparent_calc(50%+440px),#000_calc(50%+500px),#000_100%)] max-[999px]:[mask-image:none] max-[999px]:opacity-70 max-[999px]:[&>span:nth-child(3n+1)]:hidden max-[999px]:[&>span:nth-child(3n+2)]:hidden"
       aria-hidden="true"
     >
       {drops.map((drop) => (
