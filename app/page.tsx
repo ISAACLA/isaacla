@@ -31,7 +31,7 @@ export default function Home() {
             isaac@la
           </a>
           <nav
-            className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1"
+            className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1 max-[479px]:grid max-[479px]:w-full max-[479px]:grid-cols-[auto_auto] max-[479px]:justify-start max-[479px]:justify-items-start max-[479px]:gap-x-6 max-[479px]:gap-y-1.5"
             aria-label="Contact and resume"
           >
             <CopyEmail
